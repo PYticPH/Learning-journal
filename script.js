@@ -1,10 +1,9 @@
 //Script
 
-import { project } from "./project.js"
+import { project } from "./project.js";
 
 function renderHeader() {
-  const headerHtml =
-    `
+  const headerHtml = `
 		<nav>
 			<img src="images/logo.png" alt="logo" class="logo-img">
 			<p>My learning journal</p>
@@ -13,17 +12,15 @@ function renderHeader() {
 				<li>ABOUT ME</li>
 			</ul>
 		</nav>
-	`
+	`;
   document
-    .getElementById('header')
-    .innerHTML += headerHtml
+    .getElementById("header")
+    .innerHTML += headerHtml;
 }
 
 function renderArticles() {
-  const blogs =
-    project.map(
-      ({ name, image, githubRepo, tech }, index) =>
-        `
+  const blogs = project.map(
+    ({ name, image, githubRepo, tech }, index) => `
         <article id="blogpost-${index}" class="blogpost">
           <img 
             src="${image}"
@@ -43,22 +40,21 @@ function renderArticles() {
             <span>Tech: ${tech}</span>
           </p>
         </article>
-    `
-    ).join("")
+    `,
+  ).join("");
 
-  document.getElementById("main").innerHTML += blogs
+  document.getElementById("main").innerHTML += blogs;
 }
 
 function renderFooter() {
-  const footerHtml =
-    `
+  const footerHtml = `
       <p>My Learning Journal</p>
       <p>Copyright (c) 2026 Author. All Rights Reserved.</p>
-    `
+    `;
 
-  document.getElementById("footer").innerHTML = footerHtml
+  document.getElementById("footer").innerHTML = footerHtml;
 }
 
-renderHeader()
-renderArticles()
-renderFooter()
+renderHeader();
+renderArticles();
+renderFooter();

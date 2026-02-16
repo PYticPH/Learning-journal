@@ -2,6 +2,25 @@
 
 import { project } from "./project.js";
 
+const screenWidth = window.innerWidth;
+const viewMoreBtn = document.getElementById("view-more");
+
+if (screenWidth > 767) {
+  viewMoreBtn.style.display = "none";
+}
+
+viewMoreBtn.addEventListener("click", () => {
+  const posts = document.querySelectorAll(".blogpost");
+
+  posts.forEach((post) => {
+    if (post.classList.contains("hidden")) {
+      post.classList.remove("hidden");
+    }
+  });
+
+  viewMoreBtn.style.display = "none";
+});
+
 function renderHeader() {
   const headerHtml = `
 		<nav>
@@ -21,7 +40,9 @@ function renderHeader() {
 function renderArticles() {
   const blogs = project.map(
     ({ name, image, githubRepo, tech }, index) => `
-        <article id="blogpost-${index}" class="blogpost">
+        <article id="blogpost-${index}" 
+                class="blogpost ${screenWidth < 768 && index > 2 ? "hidden" : ""
+      }">
           <img 
             src="${image}"
             alt="blog post image" 

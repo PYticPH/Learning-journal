@@ -1,6 +1,6 @@
 //Project list
 
-const imgPlaceholder = "images/plceholder.avif";
+const imgPlaceholder = "images/placeholder.avif";
 const githubUrl = "https://github.com/PYticPH/";
 
 export const project = [

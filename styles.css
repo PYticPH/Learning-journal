@@ -1,14 +1,7 @@
 body {
-  display: grid;
-  grid-template-rows: auto 1em auto 4em auto;
-  grid-template-areas:
-    "header"
-    "..."
-    "main"
-    "..."
-    "footer";
+  max-width: 1440px;
   font-family: "Source sans 3", sans-serif;
-  margin: 0;
+  margin: 0 auto;
 }
 
 nav {
@@ -27,6 +20,7 @@ nav ul {
   list-style-type: none;
   padding: 0;
   margin: auto 0 auto auto;
+  align-items: center;
 }
 
 nav ul li {
@@ -80,17 +74,19 @@ h1 {
 }
 
 main {
+  background-image: #FAFAFA;
   display: grid;
-  grid-template-columns: auto;
-  row-gap: 2em;
+  grid-template-columns: 1fr;
   grid-area: main;
-  padding: 0 1em;
+  padding: 1.5em 1em;
+  row-gap: 2em;
 }
 
 .blogpost-img {
   display: block;
   width: 100%;
   object-fit: cover;
+  border-radius: 3px;
 }
 
 time {
@@ -107,11 +103,12 @@ h2 {
   font-size: 5vw;
   color: #141414;
   font-weight: 700;
-  margin: 0.2em 0;
+  margin: 0.5em 0;
 }
 
 .blog-content {
   margin: 0;
+  line-height: 1.5;
 }
 
 .blog-content,
@@ -150,4 +147,123 @@ a:visited,
 a:active {
   color: #505050;
   text-decoration: none;
+}
+
+
+/* Media query */
+
+@media (min-width: 480px) {
+
+
+
+  nav p {
+    font-size: 0.846rem;
+  }
+
+  nav ul li,
+  header time {
+    font-size: 0.75rem;
+  }
+
+  header time {
+    margin-top: 12em;
+  }
+
+  .header-paragraph-text {
+    font-size: 2rem;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .header-paragraph-text {
+    font-size: 1rem;
+  }
+
+  article time {
+    font-size: 0.885rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  .blog-content,
+  .blog-git-paragraph,
+  .blog-content-tech {
+    font-size: 1rem;
+  }
+
+  footer p {
+    font-size: 0.75rem;
+  }
+
+}
+
+@media (min-width: 576px) {
+
+  main {
+    padding: 3rem;
+  }
+}
+
+
+@media (min-width: 768px) {
+
+  nav {
+    padding: 0 2em;
+  }
+
+  nav ul {
+    column-gap: 1.2em;
+  }
+
+  header {
+    padding-bottom: 3em;
+  }
+
+  header time {
+    margin-top: 18em;
+  }
+
+  main {
+    grid-template-columns: 1fr 1fr;
+    column-gap: 1.5em;
+  }
+
+}
+
+@media (min-width: 1025px) {
+
+  .logo-img {
+    width: 34px;
+    height: 34px;
+  }
+
+  nav p {
+    font-size: 1.253rem;
+  }
+
+  nav ul li {
+    font-size: 1rem;
+  }
+
+  header time,
+  .header-paragraph-text {
+    font-size: 1rem;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+
+  .header-paragraph-text {
+    width: 600px;
+  }
+
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

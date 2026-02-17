@@ -118,6 +118,23 @@ h2 {
   color: #505050;
 }
 
+
+.blog-git-paragraph>span,
+.blog-content-tech>span {
+  border: none;
+  padding: 0.3em 0.7rem;
+  color: #ffffff;
+  border-radius: 3px;
+}
+
+.blog-git-paragraph>span {
+  background-color: #1d1d36;
+}
+
+.blog-content-tech>span {
+  background-color: #8e2a16;
+}
+
 .view-more {
   display: block;
   background: none;
@@ -239,6 +256,10 @@ a:active {
     padding-bottom: 3em;
   }
 
+  .header-paragraph-text {
+    width: 720px;
+  }
+
   header time {
     margin-top: 18em;
   }
@@ -276,7 +297,7 @@ a:active {
   }
 
   .header-paragraph-text {
-    width: 600px;
+    width: 840px;
   }
 
   main {

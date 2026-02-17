@@ -39,7 +39,7 @@ function renderHeader() {
 
 function renderArticles() {
   const blogs = project.map(
-    ({ name, image, githubRepo, tech }, index) => `
+    ({ name, image, text, githubRepo, tech }, index) => `
         <article id="blogpost-${index}" 
                 class="blogpost ${screenWidth < 768 && index > 2 ? "hidden" : ""
       }">
@@ -50,15 +50,13 @@ function renderArticles() {
           <time datetime="2026-02-06">February, 06, 2026</time>
           <h2>${name}</h2>
           <p class="blog-content">
-            This is a blog post which span multiple lines.
-            Blog post about authors learning and tech used 
-            to complete each project will be seen here
+              ${text}
           </p>
           <p class="blog-git-paragraph">
-            Github: <a href="https://${githubRepo}">${name}</a>
+            <span>Github link:</span> <a href="https://${githubRepo}" target="_blank">${name}</a>
           </p>
           <p class="blog-content-tech">
-            <span>Tech: ${tech}</span>
+            <span>Tech:</span> ${tech}
           </p>
         </article>
     `,
